@@ -53,10 +53,9 @@ class _CardDetailState extends State<CardDetail> {
                   .pushNamed(AppRoutes.cardDetailEdit)
                   .then((_) async {
                 await _cardService.setupById(id: _instance.id);
+                _instance.apply(_cardService.target.toCardTerm());
 
-                setState(() {
-                  _instance.apply(_cardService.target.toCardTerm());
-                });
+                setState(() {});
               });
             },
           ),

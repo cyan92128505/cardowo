@@ -5,7 +5,7 @@ import 'package:reorderables/reorderables.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:cardowo/models/card.dart';
-import 'package:cardowo/resources/charon_icon.dart';
+import 'package:cardowo/resources/cardowo_icon.dart';
 import 'package:cardowo/services/card_service.dart';
 import 'package:cardowo/services/i18n_service.dart';
 import 'package:cardowo/views/card/card_image.dart';
@@ -118,7 +118,7 @@ class _CardSortState extends State<CardSort> {
           children: <Widget>[
             Positioned(
               child: SvgPicture.string(
-                CharonIcon.lightMode,
+                CardowoIcon.lightMode,
                 color: Theme.of(context).primaryColor.withOpacity(0.2),
               ),
               bottom: 64,

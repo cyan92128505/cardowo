@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cardowo/config/lang_key.dart';
 import 'package:cardowo/models/card.dart';
 import 'package:cardowo/services/i18n_service.dart';
-import 'package:cardowo/resources/charon_icon.dart';
+import 'package:cardowo/resources/cardowo_icon.dart';
 import 'package:cardowo/routes.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -79,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: <Widget>[
             const Spacer(),
             SvgPicture.string(
-              _darkMode ? CharonIcon.darkMode : CharonIcon.lightMode,
+              CardowoIcon.logo,
               width: _size,
               height: _size,
             ),

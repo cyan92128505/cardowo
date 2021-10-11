@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:package_info/package_info.dart';
 
-import 'package:cardowo/resources/charon_icon.dart';
+import 'package:cardowo/resources/cardowo_icon.dart';
 import 'package:cardowo/services/i18n_service.dart';
 import 'package:cardowo/config/environment.dart';
 import 'package:cardowo/views/setting/mail_tile.dart';
@@ -19,7 +19,7 @@ class AboutTile extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         child: SvgPicture.string(
-          CharonIcon.lightMode,
+          CardowoIcon.lightMode,
           color: Colors.white,
           width: 24,
           height: 24,
@@ -89,17 +89,18 @@ class _AboutPageState extends State<AboutPage> {
       const MailTile(),
       ListTile(
         leading: CircleAvatar(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: Colors.white,
           foregroundColor: Colors.white,
-          child: Image.asset(
-            CharonIcon.gmdigiLogo,
-            width: 24,
-            height: 24,
-            color: Colors.white,
+          child: SvgPicture.string(
+            CardowoIcon.logo,
+            width: 48,
+            height: 48,
           ),
         ),
         title: const Text('AJHOME'),
-        subtitle: const Text('Copyright © 2019 - All rights reserved'),
+        subtitle: Text(
+          'Copyright © ${DateTime.now().year} - All rights reserved',
+        ),
         onTap: () {
           setState(() {});
         },

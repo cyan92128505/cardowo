@@ -28,7 +28,7 @@ class CardImage extends StatefulWidget {
 }
 
 class _CardImageState extends State<CardImage> {
-  final CardFormInstance _target = CardService().target;
+  CardFormInstance get _target => CardService().target;
   String _path = '';
   late Image _image;
 

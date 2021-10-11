@@ -304,8 +304,8 @@ class CardFormInstance {
   late String? createDatetime;
   late int? sort;
 
-  late Uint8List? frontImage;
-  late Uint8List? reverseImage;
+  Uint8List? frontImage;
+  Uint8List? reverseImage;
 
   CardFormInstance({
     this.id,

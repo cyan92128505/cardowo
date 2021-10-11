@@ -46,6 +46,12 @@ class _RootState extends State<Root> with WidgetsBindingObserver {
       return const CircularProgressIndicator();
     } else {
       return MaterialApp(
+        theme: ThemeData(
+          primaryColor: const Color(0xFF519ABA),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color(0xFF519ABA),
+          ),
+        ),
         debugShowCheckedModeBanner: false,
         title: 'CardOwO',
         initialRoute: AppRoutes.splash,

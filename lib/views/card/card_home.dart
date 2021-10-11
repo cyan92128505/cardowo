@@ -1,12 +1,13 @@
 // ignore_for_file: unnecessary_null_comparison
 
 import 'package:barcode_scan2/barcode_scan2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:cardowo/resources/charon_icon.dart';
+import 'package:cardowo/resources/cardowo_icon.dart';
 import 'package:cardowo/config/card_default.dart';
 import 'package:cardowo/config/lang_key.dart';
 import 'package:cardowo/models/card.dart';
@@ -79,26 +80,16 @@ class _CardHomePageState extends State<CardHomePage> {
           )
         ],
       ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            child: SvgPicture.string(
-              CharonIcon.lightMode,
-              color: Theme.of(context).primaryColor.withOpacity(0.2),
-            ),
-            bottom: -32,
-            right: -32,
-          ),
-          FutureBuilder(
-            future: _checkCard(),
-            builder: (context, asyncSnapshot) {
-              if (asyncSnapshot.connectionState == ConnectionState.done) {
-                return asyncSnapshot.data as Widget;
-              }
-              return Container();
-            },
-          ),
-        ],
+      body: FutureBuilder(
+        future: _checkCard(),
+        builder: (context, asyncSnapshot) {
+          if (asyncSnapshot.connectionState == ConnectionState.done) {
+            return asyncSnapshot.data as Widget;
+          }
+          return const Center(
+            child: CupertinoActivityIndicator(),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add',
